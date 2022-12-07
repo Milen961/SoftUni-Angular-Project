@@ -18,4 +18,4 @@ import { ProfileComponent } from './profile/profile.component';
     CommonModule
   ]
 })
-export class AuthControllerModule { }
+export class AuthModule { }
