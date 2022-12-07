@@ -15,7 +15,7 @@ export class AuthService implements OnDestroy {
 
   user: IUser | null = null;
 
-  get isLoggedIn() {
+  get loggedIn() {
     return this.user !== null;
   }
 
