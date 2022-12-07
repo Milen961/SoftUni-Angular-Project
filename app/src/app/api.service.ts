@@ -1,28 +1,28 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http'
-// import { environment } from '../environments/environment';
-// import { ITheme } from './shared/interfaces/theme';
-// import { IPost } from './shared/interfaces/post';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { environment } from '../environments/environment';
+import { IBook } from './shared/interfaces/book';
+import { IPost } from './shared/interfaces/post';
 
-// const apiURL = environment.apiURL;
+const apiURL = environment.apiURL;
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ApiService {
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
 
-//   constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-//   loadThemes() {
-//     return this.httpClient.get<ITheme[]>(`${apiURL}/themes`);
-//   }
+  loadBooks() {
+    return this.httpClient.get<IBook[]>(`${apiURL}/books`);
+  }
 
-//   loadTheme(id: number) {
-//     return this.httpClient.get<ITheme>(`${apiURL}/themes/${id}`);
-//   }
+  loadBook(id: number) {
+    return this.httpClient.get<IBook>(`${apiURL}/books/${id}`);
+  }
 
-//   loadPosts(limit?: number) {
-//     return this.httpClient.get<IPost[]>(`${apiURL}/posts${limit ? `?limit=${limit}` : ``}`);
-//   }
+  loadPosts(limit?: number) {
+    return this.httpClient.get<IPost[]>(`${apiURL}/posts${limit ? `?limit=${limit}` : ``}`);
+  }
 
-// }
+}
