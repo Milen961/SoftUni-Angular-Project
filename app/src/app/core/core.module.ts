@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorHandlerComponent } from './error-handler/error-handler.component';
 import { Page404Component } from './page404/page404.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,7 +18,16 @@ import { Page404Component } from './page404/page404.component';
     Page404Component
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
+
+  ],
+  exports: [
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    Page404Component,
+    ErrorHandlerComponent
   ]
 })
 export class CoreModule { }
