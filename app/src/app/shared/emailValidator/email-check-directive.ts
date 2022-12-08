@@ -7,12 +7,12 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorF
     providers: [
       {
         provide: NG_VALIDATORS,
-        useExisting: AppEmailDirective,
+        useExisting: EmailDirective,
         multi: true
       }
     ]
   })
-  export class AppEmailDirective implements OnChanges, Validator {
+  export class EmailDirective implements OnChanges, Validator {
   
     @Input() appEmail: string[] = [];
   

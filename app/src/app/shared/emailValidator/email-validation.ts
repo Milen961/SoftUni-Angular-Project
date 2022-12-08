@@ -1,4 +1,4 @@
- import { ValidatorFn } from "@angular/forms";
+ import { ValidatorFn, FormGroup} from "@angular/forms";
 
  export function emailValidation(domains: String[]): ValidatorFn {
 
@@ -9,3 +9,12 @@
        return(con.value === '' || reGex.test(con.value)) ? null : { emailValidation: true }
     };
  }
+
+ export function sameValueEmails(em1: string, em2: string): ValidatorFn {
+    return (control) => {
+      const group = control as FormGroup;
+      const ctrl1 = group.get(em1);
+      const ctrl2 = group.get(em2)
+      return ctrl1?.value === ctrl2?.value ? null : { sameValueEmails: true };
+    };
+  }
