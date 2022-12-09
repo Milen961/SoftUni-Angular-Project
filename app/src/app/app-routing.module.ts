@@ -1,5 +1,6 @@
-import { ErrorHandler, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ErrorHandlerComponent } from './core/error-handler/error-handler.component';
 import { HomeComponent } from './core/home/home.component';
 import { Page404Component } from './core/page404/page404.component';
 
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'error',
-    component: ErrorHandler
+    component: ErrorHandlerComponent
   },
   {
     path: 'auth',
