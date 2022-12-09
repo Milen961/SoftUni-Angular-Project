@@ -1,1 +1,20 @@
-<p>home-message works!</p>
+<div class="welcome">
+    <h3>Welcome!</h3>
+    <p>Welcome to my book site! I hope you enjoy it.</p>
+    <div class="logged" *ngIf="!loggedIn">
+      <ul>
+        <li>
+          <a routerLink="/auth/login">
+            <i class="fas fa-sign-in-alt"></i>
+            Login
+          </a>
+        </li>
+        <li>
+          <a routerLink="/auth/register">
+            <i class="fas fa-user-plus"></i>
+            Register
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
