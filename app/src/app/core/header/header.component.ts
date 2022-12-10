@@ -14,7 +14,7 @@ export class HeaderComponent  {
   }
 
   get user() {
-    return this. authService.user;
+    return this.authService.user;
   }
   
   constructor(private authService: AuthService, private router: Router) { }
