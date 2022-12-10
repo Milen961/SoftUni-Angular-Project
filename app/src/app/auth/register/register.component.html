@@ -1,1 +1,50 @@
-<p>register works!</p>
+<form [formGroup]="form" class="register" (ngSubmit)="registerHandler()">
+    
+  <label>
+    Username
+    <input type="text" formControlName="username" />
+  </label>
+  <div *ngIf="form.get('username')?.invalid && form.get('username')?.touched"
+    class="error-message">
+    Name is required and must be at least 5 characters long.
+  </div>
+
+  <label>
+    Email:
+    <input type="email" formControlName="email" />
+  </label>
+  <ng-container *ngIf="form.get('email')?.touched">
+    <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+      Email is required!
+    </p>
+    <p class="error" *ngIf="form.get('email')?.errors?.['emailValidation']">
+      Email is not valid!
+    </p>
+  </ng-container>
+
+  <label>
+    Password:
+    <input type="password" formControlName="pass" />
+  </label>
+  <div *ngIf="form.get('pass')?.invalid && form.get('password')?.touched"
+    class="error-message">
+    Password is required and must be at least 5 characters long.
+  </div>
+
+  <label>
+    rePassword:
+    <input type="password" formControlName="rePassword" />
+  </label>
+  <div *ngIf="form.get('pass')?.errors?.['sameValueGroup'] && form.get('pass')?.get('rePassword')?.touched"
+    class="error-message">
+      Repeated password does not matched password!.
+  </div>
+
+  <button [disabled]="form.invalid">Creat Account</button>
+
+  <p class="text-center">
+    Have an account?
+    <a routerLink="/auth/login">Log In</a>
+  </p>
+
+</form>
