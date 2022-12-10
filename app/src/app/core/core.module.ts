@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ErrorHandlerComponent } from './error-handler/error-handler.component';
 import { Page404Component } from './page404/page404.component';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule
 
   ],
   exports: [
