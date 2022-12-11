@@ -1,0 +1,65 @@
+/* Form styles */
+form {
+  width: 500px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  }
+
+/* Fieldset styles */
+fieldset {
+  border: none;
+  padding: 20px;
+}
+
+/* Form heading styles */
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* Form label styles */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Form input styles */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Form button styles */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  }
+
+/* Form error styles */
+.error {
+  color: red;
+  margin-top: 5px;
+  }
+
+/* Icon styles */
+i.fa {
+  margin-right: 8px;
+}

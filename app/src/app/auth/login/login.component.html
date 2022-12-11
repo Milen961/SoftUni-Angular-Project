@@ -1,1 +1,41 @@
-<p>login works!</p>
+<form [formGroup]="form" class="register" (ngSubmit)="loginHandler()">
+  <fieldset>
+    <h2>Login</h2>
+    
+    <label>
+      <i class="fa fa-envelope" aria-hidden="true"></i>
+      Email:
+      <input type="email" formControlName="email" />
+    </label>
+  
+    <div *ngIf="form.get('email')?.touched">
+      <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+        Email is required!
+      </p>
+      <p class="error" *ngIf="form.get('email')?.errors?.['emailValidation']">
+        Email is not valid!
+      </p>
+    </div>
+  
+    <label>
+      <i class="fa fa-lock" aria-hidden="true"></i>
+      Password:
+      <input type="password" formControlName="password" />
+    </label>
+  
+    <div *ngIf="form.get('password')?.touched">
+      <p class="error" *ngIf="form.get('password')?.errors?.['required']">
+        Password is required!
+      </p>
+      <p class="error" *ngIf="form.get('password')?.errors?.['minlength']">
+        Password must be at least 5 characters!
+      </p>
+    </div>
+
+    <p>
+      <button [disabled]="form.invalid">
+        Login
+      </button>
+    </p>
+  </fieldset>
+</form>
