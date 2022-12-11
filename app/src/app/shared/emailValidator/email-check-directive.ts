@@ -21,7 +21,7 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorF
     ngOnChanges(change: SimpleChanges): void {
       const EmailChange = change['appEmail'];
       if (EmailChange) {
-        this.validator = emailValidation(EmailChange.currentValue);
+        this.validator = emailValidation();
       }
     }
   
