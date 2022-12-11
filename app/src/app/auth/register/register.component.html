@@ -1,50 +1,58 @@
+
 <form [formGroup]="form" class="register" (ngSubmit)="registerHandler()">
+  <fieldset>
+    <h2>Registratio ↓</h2>
+
+    <!-- username -->
+    <div class="field field-icon">
+      <label for="username"><span><i class="fas fa-user-alt"></i></span></label>
+      <input class="input-error" type="text" formControlName="username" id="username">
+    </div>
+    <div *ngIf="form.get('username')?.touched">
+      <div *ngIf="form.get('username')?.errors?.['required']" class="error">
+        Username is required!
+      </div>
+      <div *ngIf="form.get('username')?.errors?.['minlength']" class="error">
+        Username should be longer than 5 chars
+      </div>
+    </div>
+
+    <!-- email -->
+    <div class="field field-icon">
+      <label for="email"><span><i class="fas fa-at"></i></span></label>
+      <input type="email" formControlName="email" id="email">
+    </div>
+    <div *ngIf="form.get('email')?.touched">
+      <div class="error" *ngIf="form.get('email')?.errors?.['required']">
+        Email is required!
+      </div>
+      <div class="error" *ngIf="form.get('email')?.errors?.['emailValidation']">
+        Email is not valid!
+      </div>
+    </div>  
     
-  <label>
-    Username
-    <input type="text" formControlName="username" />
-  </label>
-  <div *ngIf="form.get('username')?.invalid && form.get('username')?.touched"
-    class="error-message">
-    Name is required and must be at least 5 characters long.
-  </div>
+    <div formGroupName="pass">
+      <div class="field field-icon">
+        <label for="password"><span><i class="fas fa-key"></i></span></label>
+        <input type="password" formControlName="password" id="password">
+      </div>
+      <div *ngIf="form.get('pass')?.get('password')?.touched">
+        <div class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['required']">
+          Password is required!
+        </div>
+        <div class="error" *ngIf="form.get('pass')?.get('password')?.errors?.['minlength']">
+          Password must be at least 5 characters!
+        </div>
+      </div>
 
-  <label>
-    Email:
-    <input type="email" formControlName="email" />
-  </label>
-  <ng-container *ngIf="form.get('email')?.touched">
-    <p class="error" *ngIf="form.get('email')?.errors?.['required']">
-      Email is required!
-    </p>
-    <p class="error" *ngIf="form.get('email')?.errors?.['emailValidation']">
-      Email is not valid!
-    </p>
-  </ng-container>
+      <!-- rePassword -->
+      <div class="field field-icon">
+        <label for="rePassword"><span><i class="fas fa-key"></i></span></label>
+        <input type="password" formControlName="rePassword" id="rePassword">
+      </div>
 
-  <label>
-    Password:
-    <input type="password" formControlName="pass" />
-  </label>
-  <div *ngIf="form.get('pass')?.invalid && form.get('password')?.touched"
-    class="error-message">
-    Password is required and must be at least 5 characters long.
-  </div>
-
-  <label>
-    rePassword:
-    <input type="password" formControlName="rePassword" />
-  </label>
-  <div *ngIf="form.get('pass')?.errors?.['sameValueGroup'] && form.get('pass')?.get('rePassword')?.touched"
-    class="error-message">
-      Repeated password does not matched password!.
-  </div>
-
-  <button [disabled]="form.invalid">Creat Account</button>
-
-  <p class="text-center">
-    Have an account?
-    <a routerLink="/auth/login">Log In</a>
-  </p>
-
-</form>
+      <div *ngIf="form.get('pass')?.errors?.['sameValueGroup'] && form.get('pass')?.get('rePassword')?.touched"
+        class="error">Repeat Password does not match
+        password!</div>
+    </div>
+    <button [disabled]="form.invalid">

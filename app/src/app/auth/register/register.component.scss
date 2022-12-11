@@ -1,40 +1,56 @@
-form.register {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  form.register label {
-    font-size: 1.25em;
-    margin-bottom: 10px;
-  }
-  
-  form.register input {
-    padding: 8px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  form.register .error-message {
-    color: red;
-    margin-top: 5px;
-    font-size: 0.875em;
-  }
-  
-  form.register button[disabled] {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  form.register p.text-center {
-    margin-top: 20px;
-    font-size: 0.875em;
-  }
-  
-  form.register a {
-    color: blue;
-    text-decoration: underline;
-  }
+form {
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.field-icon {
+  position: relative;
+}
+
+.field-icon i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.field input {
+  flex: 1;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
