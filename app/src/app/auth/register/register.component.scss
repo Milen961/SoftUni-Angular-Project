@@ -4,42 +4,42 @@ form {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-h2 {
+  }
+  
+  h2 {
   margin-bottom: 20px;
   text-align: center;
-}
-
-.field {
+  }
+  
+  .field {
   display: flex;
   margin-bottom: 10px;
-}
-
-.field-icon {
+  }
+  
+  .field-icon {
   position: relative;
-}
-
-.field-icon i {
+  }
+  
+  .field-icon i {
   position: absolute;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-}
-
-.field input {
+  }
+  
+  .field input {
   flex: 1;
   padding: 10px 10px 10px 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.error {
+  }
+  
+  .error {
   color: red;
   margin-top: 5px;
-}
-
-button {
+  }
+  
+  button {
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
@@ -48,9 +48,22 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-button:disabled {
+  }
+  
+  button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-}
+  }
+  
+  p.text-center {
+  margin-top: 20px;
+  text-align: center;
+  }
+  
+  p.text-center a {
+  color: blue;
+  }
+  
+  p.text-center a:hover {
+  text-decoration: underline;
+  }
