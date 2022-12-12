@@ -7,14 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { MyModule } from './my-module';
 import { AppRoutingModule } from './app-routing.module';
-//import { appInterceptorProvider } from './app.interceptor';
-//import { AuthenticateComponent } from './authenticate/authenticate.component';
-//import { API_ERROR } from './shared/constants';
+import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { apiError } from './shared/verifications';
 import { BehaviorSubject } from 'rxjs';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthenticateComponent
   ],
   imports: [
     AppRoutingModule,
@@ -22,15 +23,14 @@ import { BehaviorSubject } from 'rxjs';
     CoreModule,
     HttpClientModule,
     SharedModule,
-    MyModule.withProviders()
   ],
-  // providers: [
-  //   appInterceptorProvider,
-  //   {
-  //     provide: API_ERROR,
-  //     useValue: new BehaviorSubject(null)
-  //   }
-  // ],
+  providers: [
+    appInterceptorProvider,
+    {
+      provide: apiError,
+      useValue: new BehaviorSubject(null)
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
