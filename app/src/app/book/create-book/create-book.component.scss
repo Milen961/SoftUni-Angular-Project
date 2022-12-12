@@ -1,0 +1,58 @@
+.new-Book-border {
+    border: 1px solid #333;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .header-background {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .new-Book-title,
+  .new-Book-content {
+    margin-bottom: 20px;
+  }
+  
+  .new-Book-title label,
+  .new-Book-content label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .new-Book-title input,
+  .new-Book-content textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .new-Book-buttons {
+    text-align: right;
+  }
+  
+  .new-Book-buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .new-Book-buttons .cancel {
+    margin-right: 10px;
+  }
+  
