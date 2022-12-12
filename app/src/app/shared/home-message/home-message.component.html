@@ -1,20 +1,8 @@
 <div class="welcome">
-    <h3>Welcome!</h3>
-    <p>Welcome to my book site! I hope you enjoy it.</p>
-    <div class="logged" *ngIf="!loggedIn">
-      <ul>
-        <li>
-          <a routerLink="/auth/login">
-            <i class="fas fa-sign-in-alt"></i>
-            Login
-          </a>
-        </li>
-        <li>
-          <a routerLink="/auth/register">
-            <i class="fas fa-user-plus"></i>
-            Register
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <h3>Welcome to my book site!</h3>
+  <p>Here you can post your book and see if people are interested in it!</p>
+  <p>To get started, simply click the "Post Your Book" button below.</p>
+  <img src="/assets/bookphoto.png" alt="bookphoto">
+  <button *ngIf="loggedIn" class="Post" type="button" routerLink="/book/new">Post Your Book</button>
+   <button *ngIf="!loggedIn" class="Post" type="button" routerLink="/auth/login">Post Your Book</button>
+</div>

@@ -1,0 +1,38 @@
+.welcome {
+    text-align: center;
+    margin: 50px auto;
+    width: 500px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .welcome h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .welcome img {
+    margin: 0 auto;
+    display: block;
+    width: 280px;
+    height: auto;
+  }
+  
+  .welcome button {
+    margin: 30px auto;
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #9f6b03;
+    cursor: pointer;
+  }
+  
+  
+  .welcome button:hover {
+    background-color: #099f02;
+  }
+  
