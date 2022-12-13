@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
 import { HomeMessageComponent } from './home-message/home-message.component';
 import { EmailDirective } from './emailValidator';
+import { RouterModule } from '@angular/router';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { ElapsedTimePipe } from './pipes/elapsed-time.pipe';
 
 
 
@@ -10,19 +13,23 @@ import { EmailDirective } from './emailValidator';
   declarations: [
     LoaderComponent,
     HomeMessageComponent,
-    EmailDirective
+    EmailDirective,
+    ShortenPipe,
+    ElapsedTimePipe
     
     
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
 
   exports:[
     LoaderComponent,
     HomeMessageComponent,
     EmailDirective,
-
+    ShortenPipe,
+    ElapsedTimePipe
   ]
    
 })

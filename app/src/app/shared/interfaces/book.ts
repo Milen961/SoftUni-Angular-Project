@@ -1,7 +1,7 @@
 import { IUser } from "./user";
 
 export interface IBook {
-  themeName: string;
+  bookName: string;
   subscribers: string[];
   userId: IUser;
   posts: string[];
