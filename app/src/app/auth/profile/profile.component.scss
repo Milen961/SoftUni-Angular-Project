@@ -1,0 +1,58 @@
+/* Style the container */
+.profile {
+    width: 500px;
+    margin: auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  /* Style the image */
+  .profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  /* Style the form elements */
+  .profile form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Style the user info elements */
+  .profile h3 {
+    margin-top: 0;
+  }
+  
+  .profile .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the input fields */
+  .profile input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style the edit and save buttons */
+  .profile .edit-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(94, 74, 2);
+    color: #fff;
+    cursor: pointer;
+  }
+  .error {
+    color: red;
+    margin-top: 5px;
+    }
+  
+  
+  .profile .edit-button:hover {
+    background-color: #099f02;
+  }
