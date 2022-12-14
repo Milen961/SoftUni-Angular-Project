@@ -1,0 +1,56 @@
+.errorData {
+  color: red;
+  font-weight: bold;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+.book-name-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.book-name {
+  margin-left: 1em;
+}
+
+.book-name a {
+  color: #333;
+  text-decoration: none;
+}
+
+.book-name h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.columns > div {
+  flex: 1;
+  margin-right: 1em;
+}
+
+.subscribers {
+  text-align: right;
+}
+
+.subscribe {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
