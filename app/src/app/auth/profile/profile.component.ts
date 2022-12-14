@@ -14,8 +14,6 @@ export class ProfileComponent {
   showEditMode = false;
   formSubmitted = false;
 
-  counter = 1;
-
   get user() {
     const { username, email } = this.authServie.user!;
    
@@ -24,10 +22,6 @@ export class ProfileComponent {
       email,
 
     };
-  }
-
-  get addresssesArray() {
-    return (this.form.get('addresses') as FormArray);
   }
 
   form!: FormGroup;
@@ -43,11 +37,6 @@ export class ProfileComponent {
  
     })
 
-  }
-
-  addNewAddress(): void {
-    this.counter++;
-    this.createForm(this.form.value);
   }
 
   toggleEditMode(): void {
