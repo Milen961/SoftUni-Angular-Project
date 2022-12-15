@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 import { BookService } from '../book.service';
 
 @Component({
@@ -8,10 +9,15 @@ import { BookService } from '../book.service';
   templateUrl: './create-book.component.html',
   styleUrls: ['./create-book.component.scss']
 })
-export class CreateBookComponent  {
+export class CreateBookComponent implements DoCheck {
   
+  loggedIn = false
+ 
 
-  constructor(private bookService: BookService, private router: Router) { }
+  constructor(private bookService: BookService, private router: Router, private authService: AuthService) { 
+
+       
+  }
 
     createBookHandler(form: NgForm): void {
       if(form.invalid) {return}
@@ -21,6 +27,10 @@ export class CreateBookComponent  {
       .subscribe(() => {
         this.router.navigate(['/book/recent'])
       })
+    }
+
+    ngDoCheck(): void {
+      this.loggedIn = this.authService.loggedIn;
     }
 
 }
