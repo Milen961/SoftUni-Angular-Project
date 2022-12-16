@@ -1,39 +1,10 @@
-/* Add a background color to the main container */
 .mainbox {
-    background-color: #f5f5f5;
-  }
-  
-  /* Style the error message */
-  .err {
-    font-size: 3em;
-    font-weight: bold;
-    color: #ff0000;
-    text-align: center;
-    
-  }
-  
-  /* Style the icon */
-  .far {
-    font-size: 2em;
-    color: #ff0000;
-    text-align: center;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Style the message text */
-  .msg {
-    font-size: 1.2em;
-    color: #000000;
-    text-align: center;
-    align-items: center;
-    margin: auto;
-  }
-  
-  /* Style the link */
-  .msg a {
-    color: #0000ff;
-    text-decoration: none;
-  }
-  
+  text-align: center;
+}
+
+.cat-photo {
+  display: inline-block;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+}
