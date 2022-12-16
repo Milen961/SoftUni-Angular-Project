@@ -21,9 +21,9 @@ export class CreateBookComponent implements DoCheck {
 
     createBookHandler(form: NgForm): void {
       if(form.invalid) {return}
-      const {bookName, postText} = form.value
+      const {bookName, bookDescription, postText} = form.value
 
-      this.bookService.createBook(bookName, postText)
+      this.bookService.createBook(bookName, bookDescription, postText)
       .subscribe(() => {
         this.router.navigate(['/book/recent'])
       })
