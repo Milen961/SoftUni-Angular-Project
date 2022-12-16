@@ -15,8 +15,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ErrorHandlerComponent,
-    Page404Component
+    Page404Component,
+    ErrorHandlerComponent
   ],
   imports: [
     CommonModule,
