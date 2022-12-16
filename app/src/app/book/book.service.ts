@@ -22,15 +22,16 @@ export class BookService {
   }
 
 
-  createBook(name: string, text: string) {
-    return this.http.post<IBook>('/api/books/', { bookName: name, postText: text });
+  createBook(name: string, description: string, text: string) {
+    return this.http.post<IBook>('/api/books/', { bookName: name, description: description ,postText: text });
   }
 
   updateBook(id: string, name: string, text: string) {
     return this.http.put<IBook>('/api/books/' + id, { bookName: name, postText: text });
   }
 
-  deleteBook(bookId: string, postId: string) {
+  deleteBookPost(bookId: string, postId: string) {
     return this.http.delete<IBook>('/api/books/' + bookId + '/post' + postId);
   }
+
 }
