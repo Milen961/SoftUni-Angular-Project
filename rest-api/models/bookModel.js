@@ -6,6 +6,10 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    description: {
+       type:String,
+       required: true
+    },
     subscribers: [{
         type: ObjectId,
         ref: "User"

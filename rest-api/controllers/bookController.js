@@ -23,12 +23,12 @@ function getBook(req, res, next) {
 }
 
 function createBook(req, res, next) {
-    const { bookName, postText } = req.body;
+    const { bookName, postText, description } = req.body;
     const { _id: userId } = req.user;
 
-    bookModel.create({ bookName, userId, subscribers: [userId] })
+    bookModel.create({ bookName, description, userId, subscribers: [userId] })
         .then(book => {
-            newPost(postText, userId, book._id)
+            newPost(postText, userId, book._id, description)
                 .then(([_, updatedBook]) => res.status(200).json(updatedBook))
         })
         .catch(next);
