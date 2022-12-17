@@ -1,7 +1,7 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { Inject, Injectable, Provider } from "@angular/core";
 import { Router } from "@angular/router";
-import { BehaviorSubject, catchError, combineLatest, map, Observable, of, switchMap, take, throwError, withLatestFrom, zip } from "rxjs";
+import { BehaviorSubject, catchError, Observable, of, switchMap, take, throwError, zip } from "rxjs";
 import { environment } from '../environments/environment';
 import { AuthService } from "./auth/auth.service";
 import { apiError } from "./shared/verifications";
@@ -29,7 +29,7 @@ export class AppInterceptor implements HttpInterceptor {
         switchMap(([err, user]) => {
           if (err.status === 401) {
             if (!user) {
-              this.router.navigate(['/not-found']);
+              this.router.navigate(['/']);
             } else {
               this.router.navigate(['/auth/no-permissions']);
             }
