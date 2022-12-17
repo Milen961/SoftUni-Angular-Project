@@ -1,4 +1,4 @@
-<div  class="new-Book-border">
+<div class="new-Book-border">
   <div class="header-background">
     <span>New Book</span>
   </div>
@@ -6,9 +6,8 @@
   <!-- Add *ngIf directive and [hidden] attribute to form element -->
   <form *ngIf="loggedIn" #form="ngForm" (ngSubmit)="createBookHandler(form)" [hidden]="!loggedIn">
     <div class="new-Book-title">
-      <label for="bookName">Title <span class="red">*</span></label>
-      <input type="text" name="bookName" #nameInput="ngModel" ngModel required [minlength]="5" id="bookName">
-
+      <label for="bookName">Title <span class="red"></span></label>
+      <input type="text" name="bookName" #nameInput="ngModel" ngModel required [minlength]="1" id="bookName">
       <ng-container *ngIf="nameInput.touched">
         <p class="error" *ngIf="nameInput.errors?.['required']">
           Book name is required.
@@ -17,24 +16,37 @@
           Book name must be at least {{nameInput.errors?.['minlength']['requiredLength']}} characters long.
         </p>
       </ng-container>
+      <div class="new-Book-title">
+        <label for="bookDescription">Description <span class="red"></span></label>
+        <textarea type="text" name="bookDescription" #nameDescription="ngModel" ngModel required [minlength]="10"
+          id="bookDescription" rows="4"  style="width: 558px; height: 50px" >
+      </textarea>
+        <ng-container *ngIf="nameDescription.touched">
+          <p class="error" *ngIf="nameDescription.errors?.['required']">
+            Book description is required
+          </p>
+          <p class="error" *ngIf="nameDescription.errors?.['minlength']">
+            Book descripton must be at leat {{nameDescription.errors?.['minlength']['requiredLength']}} character long.
+          </p>
+        </ng-container>
+
+      </div>
     </div>
-    <div class="new-Book-content">
-      <label for="postText">Short Description<span class="red">*</span></label>
-      <textarea type="text" #textInput="ngModel" ngModel required [minlength]="10" name="postText" id="postText"
-        rows="8" class="height"></textarea>
+    <div class="new-Book-title">
+      <label for="postText">Recent Book Title<span class="red"></span></label>
+      <input type="text" name="postText" #textInput="ngModel" ngModel required [minlength]="1" id="postText">
       <ng-container *ngIf="textInput.touched">
         <p class="error" *ngIf="textInput.errors?.['required']">
-          The field with short description is required.
+          The field is required.
         </p>
         <p class="error" *ngIf="textInput.errors?.['minlength']">
-          Description must be at least {{textInput.errors?.['minlength']['requiredLength']}} characters long.
+          The field must be at least {{textInput.errors?.['minlength']}} characters long.
         </p>
       </ng-container>
     </div>
     <div class="new-Book-buttons">
       <button class="cancel" type="button" routerLink="/book/recent">Cancel</button>
       <button class="create" [disabled]="form.invalid">Create</button>
-
     </div>
   </form>
 
