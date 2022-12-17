@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { IBook, IUser } from 'src/app/shared/interfaces';
+
 
 @Component({
   selector: 'app-book-detail',
@@ -7,7 +12,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) {
+    console.log(this.activatedRoute.snapshot.data?.['book']);
+  }
 
   ngOnInit(): void {
   }
