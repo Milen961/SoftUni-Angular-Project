@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
-import { IBook } from 'src/app/shared/interfaces';
+import { AuthService } from 'src/app/auth/auth.service';
+import { IBook, IPost } from 'src/app/shared/interfaces';
 import { BookService } from '../book.service';
 
 @Component({
@@ -10,13 +11,27 @@ import { BookService } from '../book.service';
 })
 export class BookListComponent implements OnInit {
 
-  bookList : IBook[] | null = null;
-  errorData = false
+  bookList: IBook[] | null = null;
+  recentPosts: IPost[] | undefined;
+  errorData = false;
+  loggedIn = false;
 
-  constructor(private apiService: ApiService, private bookService: BookService) { }
+  constructor(private bookService: BookService, private authService: AuthService, private apiService: ApiService ) { }
+
+  
 
   ngOnInit(): void {
-    this.apiService.loadBooks().subscribe({
+    this.loadBooks();
+    this.fetchPosts();
+    
+  }
+
+  ngDoCheck(): void {
+    this.loggedIn = this.authService.loggedIn;
+  }
+
+  loadBooks() {
+    this.bookService.getBooks().subscribe({
       next: (value) => {
         this.bookList = value;
       },
@@ -26,6 +41,21 @@ export class BookListComponent implements OnInit {
       }
     });
   }
-  
 
+  fetchPosts(): void{
+    this.recentPosts = undefined
+    this.apiService.loadPosts().subscribe(posts => this.recentPosts = posts)
+  }
+   
+
+  // deleteBookPost(bookId: string, postId: string) {
+  //   this.bookService.deleteBookPost(bookId, postId).subscribe({
+  //     next: () => {
+  //       this.loadBooks();
+  //     },
+  //     error: (error) => {
+  //       console.log(error);
+  //     }
+  //   });
+  // }
 }

@@ -1,23 +1,48 @@
-<div *ngIf="errorData">Error loading themes</div>
+<!-- <div *ngIf="errorData">Error loading books</div>
 <app-loader *ngIf="!bookList"></app-loader>
 <div *ngFor="let book of bookList; let i = index" class="book-container">
   <div class="book-name-wrapper">
     <div class="book-name">
       <a href="#" class="normal">
-        <h2>{{book.bookName | shorten : 25}}</h2>
+        <h2>Book Name:{{book.bookName | shorten : 25}}</h2>
       </a>
+      <div class="book-description">
+        <h2>Description:{{book.description}}</h2>
+      </div>
       <div class="columns">
         <div>
-          <p>Date: <time>{{book.created_at | elapsedTime}}</time></p>
-          <div class="nick-name">
-            <p>Creator: <span>{{book.userId.username}}</span></p>
-          </div>
+        
+            <p>Date:<time>{{book.created_at | elapsedTime}}</time></p>
+            <div class="nick-name">
+              <p>Creator:<span>{{book.userId.username}}</span></p>
+            </div>
+      
         </div>
         <div class="subscribers">
-           <button class="subscribe">Subscribe</button> 
-          <p>Subscribers: <span>{{book.subscribers.length}}</span></p>
+          <button *ngIf="loggedIn" class="subscribe" (click)="book.subscribers.length">Subscribe</button>
+          <p>Subscribers:{{book.subscribers.length}}</p>
         </div>
+        <div></div>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div *ngIf="errorData">Error loading books</div>
+<app-loader *ngIf="!bookList"></app-loader>
+<div *ngFor="let book of bookList; let i = index" class="book-container">
+  <div class="card" style="width: 28rem;">
+    <div class="card-body">
+      <h5 class="card-title">Book Name:{{book.bookName | shorten : 25}}</h5>
+      <p class="card-text">Description:{{book.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Date:<time>{{book.created_at | elapsedTime}}</time></li>
+      <li class="list-group-item">Creator:<span>{{book.userId.username}}</span></li>
+    </ul>
+    <div class="card-body">
+      <button *ngIf="loggedIn" class="subscribe" (click)="book.subscribers.length">Subscribe</button>
+       <p>Subscribers:{{book.subscribers.length}}</p>
     </div>
   </div>
 </div>
