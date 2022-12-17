@@ -7,7 +7,7 @@
     </h2>
     <div>
       <div *ngFor="let post of posts" class="aside-theme">
-        <a href="#">
+        <a routerLink="/posts/detail/:id">
           <h3>{{post.bookId.bookName}}</h3>
           <p>{{post.userId.username}}</p>
           <p><span>{{post.created_at}}</span></p>
